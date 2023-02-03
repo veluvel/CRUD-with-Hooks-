@@ -7,9 +7,9 @@ import EditUserForm from "./forms/EditUserForm";
 function App() {
 
 const usersData = [
-    {id:1,name:'Logesh',username:'jvlogesh'},
-    {id:2,name:'Ramesh',username:'rameshtr'},
-    {id:3,name:'Daniel',username:'danielradcliff'},
+    {id:1,name:'vel',username:'veluvel'},
+    {id:2,name:'abu',username:'abusha'},
+    {id:3,name:'moorthi',username:'ravmoorthi'}
 ];
 
 const addUser = (user)=>{
@@ -22,9 +22,8 @@ const deleteUser = (id)=>{
 }
 
     const [users,setUsers] = useState(usersData);
-    const [editing,setEditing] = useState(false)
-    
-
+    const [editing,setEditing] = useState(false);
+  
     const initialFormState = {id:null,name:'',username:''}
 
     const [currentUser,setCurrentUser] = useState(initialFormState);
@@ -36,14 +35,14 @@ const deleteUser = (id)=>{
 
     const updateUser = (id,updatedUser)=>{
         setEditing(false);
-        setUsers(users.map((user)=>(user.id===id?updatedUser:user)))
+        setUsers(users.map((user)=>(user.id===id ? updatedUser : user)))
     }
 
   return (
     <div className="container">
       <h1>CRUD App with Hooks</h1>
       <div className="flex-row">
-        <div className="flex-large">
+        <div className="flex-large left">
             {editing?(<div>
                 <h2>Edit User</h2>
                 <EditUserForm 
@@ -58,7 +57,7 @@ const deleteUser = (id)=>{
             ) 
         }
         </div>
-        <div className="flex-large">
+        <div className="flex-large right">
           <h2>View users</h2>
           <UserTable editRow={editRow} deleteUser={deleteUser} users={users} />
         </div>

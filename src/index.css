@@ -1,4 +1,26 @@
+*{
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(180deg,yellow, orange);
+  background-repeat: no-repeat;
+}
+h1{
+  text-align: center;
+}
+.container{
+  background-image: linear-gradient(180deg,yellow, orange);
+}
+.right{
+  /* background-color: red; */
+  width: 20%;
+  padding: 20px;
+}
+.right h2{
+  text-align: center;
+}
 .flex-row{
+  padding: 30px;
   display: flex;
-  justify-content: space-around;
+  gap: 10%;
+  justify-content: space-evenly;
 }
